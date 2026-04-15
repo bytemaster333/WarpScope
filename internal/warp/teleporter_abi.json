@@ -1,0 +1,106 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true,  "name": "messageID",          "type": "bytes32"},
+      {"indexed": true,  "name": "sourceBlockchainID", "type": "bytes32"},
+      {"indexed": true,  "name": "deliverer",          "type": "address"},
+      {"indexed": false, "name": "rewardRedeemer",     "type": "address"},
+      {
+        "indexed": false,
+        "name": "message",
+        "type": "tuple",
+        "components": [
+          {"name": "messageNonce",             "type": "uint256"},
+          {"name": "originSenderAddress",      "type": "address"},
+          {"name": "destinationBlockchainID",  "type": "bytes32"},
+          {"name": "destinationAddress",       "type": "address"},
+          {"name": "requiredGasLimit",         "type": "uint256"},
+          {"name": "allowedRelayerAddresses",  "type": "address[]"},
+          {
+            "name": "receipts",
+            "type": "tuple[]",
+            "components": [
+              {"name": "receivedMessageNonce", "type": "uint256"},
+              {"name": "relayerRewardAddress", "type": "address"}
+            ]
+          },
+          {"name": "message", "type": "bytes"}
+        ]
+      }
+    ],
+    "name": "ReceiveCrossChainMessage",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true,  "name": "messageID",          "type": "bytes32"},
+      {"indexed": true,  "name": "sourceBlockchainID", "type": "bytes32"},
+      {
+        "indexed": false,
+        "name": "message",
+        "type": "tuple",
+        "components": [
+          {"name": "messageNonce",             "type": "uint256"},
+          {"name": "originSenderAddress",      "type": "address"},
+          {"name": "destinationBlockchainID",  "type": "bytes32"},
+          {"name": "destinationAddress",       "type": "address"},
+          {"name": "requiredGasLimit",         "type": "uint256"},
+          {"name": "allowedRelayerAddresses",  "type": "address[]"},
+          {
+            "name": "receipts",
+            "type": "tuple[]",
+            "components": [
+              {"name": "receivedMessageNonce", "type": "uint256"},
+              {"name": "relayerRewardAddress", "type": "address"}
+            ]
+          },
+          {"name": "message", "type": "bytes"}
+        ]
+      }
+    ],
+    "name": "MessageExecutionFailed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true,  "name": "messageNonce",            "type": "uint256"},
+      {"indexed": true,  "name": "destinationBlockchainID", "type": "bytes32"},
+      {
+        "indexed": false,
+        "name": "message",
+        "type": "tuple",
+        "components": [
+          {"name": "messageNonce",             "type": "uint256"},
+          {"name": "originSenderAddress",      "type": "address"},
+          {"name": "destinationBlockchainID",  "type": "bytes32"},
+          {"name": "destinationAddress",       "type": "address"},
+          {"name": "requiredGasLimit",         "type": "uint256"},
+          {"name": "allowedRelayerAddresses",  "type": "address[]"},
+          {
+            "name": "receipts",
+            "type": "tuple[]",
+            "components": [
+              {"name": "receivedMessageNonce", "type": "uint256"},
+              {"name": "relayerRewardAddress", "type": "address"}
+            ]
+          },
+          {"name": "message", "type": "bytes"}
+        ]
+      },
+      {
+        "indexed": false,
+        "name": "feeInfo",
+        "type": "tuple",
+        "components": [
+          {"name": "feeTokenAddress", "type": "address"},
+          {"name": "amount",          "type": "uint256"}
+        ]
+      }
+    ],
+    "name": "SendCrossChainMessage",
+    "type": "event"
+  }
+]

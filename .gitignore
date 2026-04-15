@@ -1,0 +1,9 @@
+bin/
+*.exe
+*.test
+*.out
+.env
+.env.*
+vendor/
+fuji-finder
+warpscope
